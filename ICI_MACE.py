@@ -42,7 +42,8 @@ try:
     with col2:
         st.title(f"Immune Checkpoint Inhibitor MACE Risk Calculator")
     
-    #st.write("The tools provided on this platform are intended for research and educational purposes only. Any use of these tools in a clinical workflow is done at the user's risk.")
+    st.write("The tools provided on this platform are intended for research and educational purposes only. Any use of these tools in a clinical workflow is done at the user's risk.")
+    st.write("Reference: Ayoub C, Appari L, Pereyra M, Farina JM, Chao CJ, Scalia IG, Mahmoud AK, Abbas MT, Baba NA, Jeong J, Lester SJ, Patel BN, Arsanjani R, Banerjee I. Multimodal Fusion Artificial Intelligence Model to Predict Risk for MACE and Myocarditis in Cancer Patients Receiving Immune Checkpoint Inhibitor Therapy. JACC Adv. 2024 Dec 13;4(1):101435. doi: 10.1016/j.jacadv.2024.101435. PMID: 39759436; PMCID: PMC11699614")
     st.markdown("---")  # horizontal line
     st.header('Demographics and Clinical History')
     col1, col2, col3, col4, col5 = st.columns(5)
