@@ -2,7 +2,6 @@ import io
 import re
 import os
 import sys
-import cv2
 import time
 import torch
 import joblib
