@@ -8,8 +8,6 @@ numpy
 pandas
 scipy
 
-opencv-python-headless
-
 Pillow
 imageio
 pydicom
@@ -17,8 +15,8 @@ SimpleITK
 
 matplotlib
 
-albumentations
-
+albumentations>=2.0
+opencv-python-headless>=4.10
 scikit-image
 scikit-learn
 
