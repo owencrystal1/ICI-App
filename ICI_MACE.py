@@ -284,12 +284,12 @@ try:
 
             if fusion_prob > 0.4763:
                 st.markdown(
-                    "<h3 style='color:red;'>High Risk of MACE</h3>",
+                    "<h3 style='color:red;'>High Risk of MACE within 1 year</h3>",
                     unsafe_allow_html=True
                 )
             else:
                 st.markdown(
-                    "<h3 style='color:black;'>Low Risk of MACE</h3>",
+                    "<h3 style='color:black;'>Low Risk of MACE within 1 year</h3>",
                     unsafe_allow_html=True
                 )
 
