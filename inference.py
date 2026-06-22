@@ -62,7 +62,7 @@ def get_preds(model_path, df, ecg=None):
             state_dict = torch.load(model_path, weights_only=True, map_location=device)
             model.load_state_dict(state_dict)
         except:
-            model = torch.load(model_path, map_location=device)
+            model = torch.load(model_path, weights_only=False, map_location=device)
 
         dataloaders_dict = data_utils.test_loader(df, params['batch_size'], params['workers'])
     else:
