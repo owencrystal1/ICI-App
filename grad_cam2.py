@@ -9,8 +9,8 @@ import torchvision.transforms as transforms # type: ignore
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 import torchvision.models as models
-from pytorch_grad_cam import GradCAM
-from pytorch_grad_cam.utils.image import show_cam_on_image, deprocess_image, preprocess_image
+#from pytorch_grad_cam import GradCAM
+#from pytorch_grad_cam.utils.image import show_cam_on_image, deprocess_image, preprocess_image
 from torchvision import models, transforms
 import matplotlib.pyplot as plt
 from tqdm import tqdm
