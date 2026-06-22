@@ -206,7 +206,7 @@ try:
 
             #ecg_gradcam = ecg_gradcam.resize((h,w))
             st.write('----------------------------------------------------------')
-            #st.subheader(f"ECG-Based MACE Risk: {prob:.4f}")
+            st.subheader(f"ECG-Based MACE Risk: {prob:.4f}")
 
             #st.image(ecg_gradcam, caption="ECG GradCAM", use_container_width=True)
             
