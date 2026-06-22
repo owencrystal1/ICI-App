@@ -1,6 +1,5 @@
 import re
 import os
-import cv2
 import torch 
 import random
 import pickle
@@ -10,7 +9,6 @@ import pandas as pd
 #import neurokit2 as nk
 from PIL import Image
 from skimage import exposure
-
 import torch.nn.functional as F
 from collections import defaultdict
 from itertools import cycle
@@ -21,42 +19,6 @@ from sklearn.preprocessing import MinMaxScaler
 #import pydicom.pixel_data_handlers.util as util
 from torch.utils.data import Dataset, DataLoader, Sampler
 
-class BalancedBatchSampler(Sampler):
-    def __init__(self, dataset, batch_size):
-        self.labels = dataset.data.label
-        self.batch_size = batch_size
-        self.class_indices = defaultdict(list)
-
-        for idx, label in enumerate(self.labels):
-            self.class_indices[label].append(idx)
-
-        self.num_classes = len(self.class_indices)
-        self.samples_per_class = batch_size // self.num_classes
-        assert self.samples_per_class > 0, "Batch size must be at least equal to the number of classes"
-
-    def __iter__(self):
-        # Make sure we can cycle through all classes multiple times
-        class_iterators = {
-            cls: cycle(indices) for cls, indices in self.class_indices.items()
-        }
-
-        # Estimate how many batches we can generate
-        total_samples = len(self.labels)
-        num_batches = total_samples // self.batch_size
-
-        for _ in range(num_batches):
-            batch = []
-            for cls in self.class_indices:
-                cls_indices = class_iterators[cls]
-                batch.extend([next(cls_indices) for _ in range(self.samples_per_class)])
-
-            # If the batch is too small (due to integer division), pad randomly
-            while len(batch) < self.batch_size:
-                random_cls = random.choice(list(self.class_indices.keys()))
-                batch.append(next(class_iterators[random_cls]))
-
-            random.shuffle(batch)
-            yield batch
 
 def echo_dataloader(pkl_file, batch_size, transform, num_workers):
         
