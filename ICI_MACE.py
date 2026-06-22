@@ -226,7 +226,7 @@ try:
             #st.subheader(f"Demographics-Based MACE Risk: {prediction[0][1]:.2f}")
 
             fusion_model = model_base.ECGFusionModel(n_features=14)
-            old_model = torch.load("./models/fusion.pth", map_location="cpu")
+            old_model = torch.load("./models/fusion.pth", weeights_only=False, map_location="cpu")
 
             old_state = old_model.state_dict()
 
