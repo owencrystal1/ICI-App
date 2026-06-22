@@ -1,3 +1,10 @@
+import sys
+print(sys.version)
+
+import cv2
+print("CV2 FILE:", cv2.__file__)
+print("CV2 VERSION:", cv2.__version__)
+
 import io
 import re
 import os
