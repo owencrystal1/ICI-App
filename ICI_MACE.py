@@ -221,8 +221,8 @@ try:
             #     except Exception as e:
             #         print(f"Could not delete temp folder: {e}")
         
-            demo_model = joblib.load("./models/tabular_ICI_model.pkl")
-            prediction = demo_model.predict_proba(df)
+            #demo_model = joblib.load("./models/tabular_ICI_model.pkl")
+            #prediction = demo_model.predict_proba(df)
             #st.subheader(f"Demographics-Based MACE Risk: {prediction[0][1]:.2f}")
 
             fusion_model = model_base.ECGFusionModel(n_features=14)
