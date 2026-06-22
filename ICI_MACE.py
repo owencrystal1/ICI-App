@@ -11,7 +11,7 @@ import imageio
 import pydicom
 import tempfile
 import inference
-import grad_cam2
+#import grad_cam2
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
@@ -201,14 +201,14 @@ try:
             prob = results['score'].mean()
 
                     
-            ecg_gradcam = grad_cam2.gen_ecg_gradcam(ecg_model_file, ecg_dataloader, original_image)
+            #ecg_gradcam = grad_cam2.gen_ecg_gradcam(ecg_model_file, ecg_dataloader, original_image)
             #w, h = original_ecg_shape[:2]
 
             #ecg_gradcam = ecg_gradcam.resize((h,w))
             st.write('----------------------------------------------------------')
             #st.subheader(f"ECG-Based MACE Risk: {prob:.4f}")
 
-            st.image(ecg_gradcam, caption="ECG GradCAM", use_container_width=True)
+            #st.image(ecg_gradcam, caption="ECG GradCAM", use_container_width=True)
             
             print('Displaying GradCAM')
 
